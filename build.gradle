@@ -7,6 +7,11 @@ buildscript {
     ext.bukkit_version = "1.9.2-R0.1-SNAPSHOT"
 }
 
+sourceSets {
+    main.java.srcDir 'src'
+    test.java.srcDir 'tests'
+}
+
 repositories {
     mavenCentral()
     maven {
@@ -17,4 +22,12 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile "org.bukkit:bukkit:$bukkit_version"
+}
+
+jar {
+    baseName = 'test'
+
+    from('resources') {
+        include '*.yml'
+    }
 }

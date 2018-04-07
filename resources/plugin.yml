@@ -1,0 +1,4 @@
+main: io.github.vehsamrak.minecraft.Main
+name: TestPlugin
+version: 0.1
+description: Test bukkit plugin
