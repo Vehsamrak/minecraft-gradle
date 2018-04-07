@@ -1,4 +1,4 @@
-package io.github.vehsamrak.minecraft;
+package io.github.vehsamrak.minecraft.gradle;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

@@ -1,4 +1,4 @@
-main: io.github.vehsamrak.minecraft.Main
+main: io.github.vehsamrak.minecraft.gradle.Main
 name: TestPlugin
-version: 0.1
+version: 1.0-SNAPSHOT
 description: Test bukkit plugin
