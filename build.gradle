@@ -3,12 +3,18 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 
-sourceCompatibility = 1.8
+buildscript {
+    ext.bukkit_version = "1.9.2-R0.1-SNAPSHOT"
+}
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "org.bukkit:bukkit:$bukkit_version"
 }
