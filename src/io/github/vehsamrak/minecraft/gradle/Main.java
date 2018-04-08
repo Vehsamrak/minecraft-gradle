@@ -11,6 +11,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         getLogger().info("))) PLUGIN ENABLED (((");
         getLogger().warning("This plugin is experimental!");
+        getServer().getPluginManager().registerEvents(new WeatherListener(), this);
     }
 
     @Override
@@ -19,6 +20,9 @@ public class Main extends JavaPlugin {
         World world = player.getWorld();
 
         world.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 5, 1);
+        world.setWeatherDuration(0);
+        world.setStorm(true);
+        world.setThundering(true);
 
         return true;
     }
