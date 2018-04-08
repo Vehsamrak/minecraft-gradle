@@ -2,3 +2,9 @@ main: io.github.vehsamrak.minecraft.gradle.Main
 name: TestPlugin
 version: 1.0-SNAPSHOT
 description: Test bukkit plugin
+
+commands:
+  test:
+    description: Run tests.
+    aliases: [check]
+    usage: Syntax error! Use "/<command>" to run tests.
