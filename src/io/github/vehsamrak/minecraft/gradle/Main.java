@@ -5,13 +5,17 @@ import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
     public void onEnable() {
         getLogger().info("))) PLUGIN ENABLED (((");
         getLogger().warning("This plugin is experimental!");
-        getServer().getPluginManager().registerEvents(new WeatherListener(), this);
+
+        PluginManager pluginManager = getServer().getPluginManager();
+        pluginManager.registerEvents(new WeatherListener(), this);
+        pluginManager.registerEvents(new BlockListener(), this);
     }
 
     @Override
