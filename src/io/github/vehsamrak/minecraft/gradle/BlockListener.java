@@ -13,7 +13,7 @@ import static org.bukkit.Bukkit.getLogger;
 public class BlockListener implements Listener {
 
     @EventHandler
-    public void onBlockBreak(BlockBreakEvent event) {
+    public void blockBreakHandler(BlockBreakEvent event) {
         getLogger().info("Block broken");
 
         Material[] availableOres = {
