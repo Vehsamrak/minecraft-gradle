@@ -24,7 +24,6 @@ public class BlockListener implements Listener {
                 Material.GOLD_ORE,
                 Material.IRON_ORE,
                 Material.LAPIS_ORE,
-                Material.QUARTZ_ORE,
                 Material.COBBLESTONE,
                 Material.DIRT,
         };
