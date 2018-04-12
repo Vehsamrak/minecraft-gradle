@@ -42,12 +42,10 @@ public class BlockListener implements Listener {
 
             Player player = event.getPlayer();
 
-            getLogger().info(player.getDisplayName());
-
             PlayerInventory inventory = player.getInventory();
             ItemStack itemInMainHand = inventory.getItemInMainHand();
-            itemInMainHand.setDurability((short) (itemInMainHand.getDurability() - 1));
-
+            getLogger().info(String.valueOf(itemInMainHand.getDurability()));
+            itemInMainHand.setDurability((short) (itemInMainHand.getDurability() + 1));
             block.breakNaturally();
 
             event.setCancelled(true);
