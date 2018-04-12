@@ -2,9 +2,12 @@ package io.github.vehsamrak.minecraft.gradle;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 
 import java.util.Random;
 
@@ -36,6 +39,15 @@ public class BlockListener implements Listener {
             int idx = new Random().nextInt(availableOres.length);
             Material ore = (availableOres[idx]);
             block.setType(ore);
+
+            Player player = event.getPlayer();
+
+            getLogger().info(player.getDisplayName());
+
+            PlayerInventory inventory = player.getInventory();
+            ItemStack itemInMainHand = inventory.getItemInMainHand();
+            itemInMainHand.setDurability((short) (itemInMainHand.getDurability() - 1));
+
             block.breakNaturally();
 
             event.setCancelled(true);
