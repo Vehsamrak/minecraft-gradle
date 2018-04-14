@@ -29,6 +29,7 @@ public class BlockListener implements Listener {
                 Material.LAPIS_ORE,
                 Material.COBBLESTONE,
                 Material.DIRT,
+                Material.AIR,
         };
 
         Block block = event.getBlock();
