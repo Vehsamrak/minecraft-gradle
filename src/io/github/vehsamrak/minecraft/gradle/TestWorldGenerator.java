@@ -8,7 +8,7 @@ import org.bukkit.util.noise.SimplexOctaveGenerator;
 import java.util.Random;
 
 public class TestWorldGenerator extends ChunkGenerator {
-    private static final double maximumHeight = 50D;
+    private static final double minimumHeight = 50D;
     // amount of difference between the highest and lowest possible heights of the world
     private static final double landCurveFactor = 30D;
     // larger the scale is, the steeper the terrain
@@ -24,7 +24,7 @@ public class TestWorldGenerator extends ChunkGenerator {
             for (int Z = 0; Z < 16; Z++) {
                 int currentHeight = (int) (
                         generator.noise(chunkX * 16 + X, chunkZ * 16 + Z, 0.5D, 0.5D)
-                                * landCurveFactor + maximumHeight
+                                * landCurveFactor + minimumHeight
                 );
 
                 chunk.setBlock(X, currentHeight, Z, Material.GRASS);
