@@ -23,7 +23,7 @@ public class Main extends JavaPlugin {
         Player player = (Player) sender;
         World world = player.getWorld();
 
-        world.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 5, 1);
+        world.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 10, 1);
         world.setWeatherDuration(0);
         world.setStorm(true);
         world.setThundering(true);
