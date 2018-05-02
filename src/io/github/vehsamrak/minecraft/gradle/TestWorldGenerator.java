@@ -20,21 +20,21 @@ public class TestWorldGenerator extends ChunkGenerator {
         ChunkData chunk = createChunkData(world);
         generator.setScale(generatorScale);
 
-        for (int X = 0; X < 16; X++) {
-            for (int Z = 0; Z < 16; Z++) {
+        for (int x = 0; x < 16; x++) {
+            for (int z = 0; z < 16; z++) {
                 int currentHeight = (int) (
-                        generator.noise(chunkX * 16 + X, chunkZ * 16 + Z, 0.5D, 0.5D)
+                        generator.noise(chunkX * 16 + x, chunkZ * 16 + z, 0.5D, 0.5D)
                                 * landCurveFactor + minimumHeight
                 );
 
-                chunk.setBlock(X, currentHeight, Z, Material.GRASS);
-                chunk.setBlock(X, currentHeight - 1, Z, Material.DIRT);
+                chunk.setBlock(x, currentHeight, z, Material.GRASS);
+                chunk.setBlock(x, currentHeight - 1, z, Material.DIRT);
 
                 for (int i = currentHeight - 2; i > 0; i--) {
-                    chunk.setBlock(X, i, Z, Material.STONE);
+                    chunk.setBlock(x, i, z, Material.STONE);
                 }
 
-                chunk.setBlock(X, 0, Z, Material.BEDROCK);
+                chunk.setBlock(x, 0, z, Material.BEDROCK);
             }
         }
 
